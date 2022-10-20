@@ -101,7 +101,7 @@
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
 
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        <H3>V.2.0</H3>
+                        <H3>V.2.0 - Copyrigth GPL- 2022</H3>
                     </div>
                 </div>
             </div>

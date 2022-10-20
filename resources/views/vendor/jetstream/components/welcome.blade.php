@@ -4,7 +4,7 @@
     </div>
 
     <div class="mt-8 text-2xl">
-       Bienvenido a tu apicacaion de Ryca WEb!
+       Bienvenido a tu aplicación de Ryca-Web!
     </div>
 
     <div class="mt-6 text-gray-500">
