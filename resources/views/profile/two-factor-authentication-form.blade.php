@@ -1,28 +1,28 @@
 <x-jet-action-section>
     <x-slot name="title">
-        {{ __('Two Factor Authentication') }}
+        {{ __('Doble Factor de Autenticación') }}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Add additional security to your account using two factor authentication.') }}
+        {{ __('Agrega securidad adicional a tu cuenta utilizando el doble factor de autenticación.') }}
     </x-slot>
 
     <x-slot name="content">
         <h3 class="text-lg font-medium text-gray-900">
             @if ($this->enabled)
                 @if ($showingConfirmation)
-                    {{ __('Finish enabling two factor authentication.') }}
+                    {{ __('Finalizada la Actualización del Doble Factor de Autenticación.') }}
                 @else
-                    {{ __('You have enabled two factor authentication.') }}
+                    {{ __('Usted Activo el Doble Factor de Autenticación.') }}
                 @endif
             @else
-                {{ __('You have not enabled two factor authentication.') }}
+                {{ __('Usted no ha Activado el Doble Factor de Autenticación.') }}
             @endif
         </h3>
 
         <div class="mt-3 max-w-xl text-sm text-gray-600">
             <p>
-                {{ __('When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone\'s Google Authenticator application.') }}
+                {{ __('Cuando el Doble Factor de Autenticación este activo, usted tendra maor seguridad, recibira un pin de autenticación a su telefono gracias a la Aplicación de Autenticacion de Google.') }}
             </p>
         </div>
 
@@ -31,9 +31,9 @@
                 <div class="mt-4 max-w-xl text-sm text-gray-600">
                     <p class="font-semibold">
                         @if ($showingConfirmation)
-                            {{ __('To finish enabling two factor authentication, scan the following QR code using your phone\'s authenticator application or enter the setup key and provide the generated OTP code.') }}
+                            {{ __('Al finalizar El Doble Factor de Autenticaciónis esta activo. Scanee el siguiente codigo QR usuando su telefono, recibira un codigo.') }}
                         @else
-                            {{ __('Two factor authentication is now enabled. Scan the following QR code using your phone\'s authenticator application or enter the setup key.') }}
+                            {{ __('El Doble Factor de Autenticaciónis esta ahora activo. Scanee el siguiente codigo QR usuando su telefono, la aplicación de autenticación enviara codigo de acceso.') }}
                         @endif
                     </p>
                 </div>
@@ -64,7 +64,7 @@
             @if ($showingRecoveryCodes)
                 <div class="mt-4 max-w-xl text-sm text-gray-600">
                     <p class="font-semibold">
-                        {{ __('Store these recovery codes in a secure password manager. They can be used to recover access to your account if your two factor authentication device is lost.') }}
+                        {{ __('Almacene el codigo de rcuperacion en un manejador de contraseñas seguro. Usted podra usar este numero para acceder a su cuenta con el  Doble Factor de Autenticación si ha erdido su dispositivo.') }}
                     </p>
                 </div>
 
@@ -80,26 +80,26 @@
             @if (! $this->enabled)
                 <x-jet-confirms-password wire:then="enableTwoFactorAuthentication">
                     <x-jet-button type="button" wire:loading.attr="disabled">
-                        {{ __('Enable') }}
+                        {{ __('Activar') }}
                     </x-jet-button>
                 </x-jet-confirms-password>
             @else
                 @if ($showingRecoveryCodes)
                     <x-jet-confirms-password wire:then="regenerateRecoveryCodes">
                         <x-jet-secondary-button class="mr-3">
-                            {{ __('Regenerate Recovery Codes') }}
+                            {{ __('Regenerar Codigos de Recuperación') }}
                         </x-jet-secondary-button>
                     </x-jet-confirms-password>
                 @elseif ($showingConfirmation)
                     <x-jet-confirms-password wire:then="confirmTwoFactorAuthentication">
                         <x-jet-button type="button" class="mr-3" wire:loading.attr="disabled">
-                            {{ __('Confirm') }}
+                            {{ __('Confirmar') }}
                         </x-jet-button>
                     </x-jet-confirms-password>
                 @else
                     <x-jet-confirms-password wire:then="showRecoveryCodes">
                         <x-jet-secondary-button class="mr-3">
-                            {{ __('Show Recovery Codes') }}
+                            {{ __('Mostrar Codigos de Recuperación') }}
                         </x-jet-secondary-button>
                     </x-jet-confirms-password>
                 @endif
@@ -107,13 +107,13 @@
                 @if ($showingConfirmation)
                     <x-jet-confirms-password wire:then="disableTwoFactorAuthentication">
                         <x-jet-secondary-button wire:loading.attr="disabled">
-                            {{ __('Cancel') }}
+                            {{ __('Cancelar') }}
                         </x-jet-secondary-button>
                     </x-jet-confirms-password>
                 @else
                     <x-jet-confirms-password wire:then="disableTwoFactorAuthentication">
                         <x-jet-danger-button wire:loading.attr="disabled">
-                            {{ __('Disable') }}
+                            {{ __('Disactivar') }}
                         </x-jet-danger-button>
                     </x-jet-confirms-password>
                 @endif
